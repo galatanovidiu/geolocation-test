@@ -19,9 +19,9 @@ export default function Home() {
         [webcamRef]
     );
     const videoConstraints = {
-        width: 1280,
-        height: 720,
-        facingMode: "user"
+        width: '100%',
+        height: 'auto',
+        facingMode: "environment"
     };
 
     const WebcamCapture = () => {
@@ -64,15 +64,18 @@ export default function Home() {
                 </tr>
                 </tbody>
             </table>
-            <Webcam
-                audio={false}
-                height={720}
-                ref={webcamRef}
-                screenshotFormat="image/jpeg"
-                width={1280}
-                videoConstraints={videoConstraints}
-            />
-            <button onClick={capture}>Capture photo</button>
+            <div className={'flex flex-col'}>
+                <Webcam
+                    audio={false}
+                    height={720}
+                    ref={webcamRef}
+                    screenshotFormat="image/jpeg"
+                    width={1280}
+                    videoConstraints={videoConstraints}
+                />
+                <button onClick={capture} className={'bg-blue-600 text-white '}>Capture photo</button>
+                <img src={imageSrc} alt=""/>
+            </div>
         </div>
     ) : (
         <div>Getting the location data&hellip; </div>
