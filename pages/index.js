@@ -67,10 +67,10 @@ export default function Home() {
             <div className={'flex flex-col'}>
                 <Webcam
                     audio={false}
-                    height={720}
+                    height={'auto'}
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
-                    width={1280}
+                    width={'100%'}
                     videoConstraints={videoConstraints}
                 />
                 <button onClick={capture} className={'bg-blue-600 text-white mt-5 py-4 rounded'}>Capture photo</button>
