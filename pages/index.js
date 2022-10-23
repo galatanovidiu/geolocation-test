@@ -19,9 +19,8 @@ export default function Home() {
         [webcamRef]
     );
     const videoConstraints = {
-        width: '100%',
-        height: 'auto',
-        facingMode: "environment"
+        width: 1280,
+        height: 720
     };
 
     const WebcamCapture = () => {
@@ -67,10 +66,10 @@ export default function Home() {
             <div className={'flex flex-col'}>
                 <Webcam
                     audio={false}
-                    height={'auto'}
+                    height={720}
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
-                    width={'100%'}
+                    width={1280}
                     videoConstraints={videoConstraints}
                 />
                 <button onClick={capture} className={'bg-blue-600 text-white mt-5 py-4 rounded'}>Capture photo</button>
