@@ -39,7 +39,7 @@ export default function Home() {
     ) : !isGeolocationEnabled ? (
         <div>Geolocation is not enabled</div>
     ) : coords ? (
-        <div>
+        <div className={'p-8'}>
             <table>
                 <tbody>
                 <tr>
@@ -73,8 +73,7 @@ export default function Home() {
                     width={1280}
                     videoConstraints={videoConstraints}
                 />
-                <button onClick={capture} className={'bg-blue-600 text-white '}>Capture photo</button>
-                <img src={imageSrc} alt=""/>
+                <button onClick={capture} className={'bg-blue-600 text-white mt-5 py-4 rounded'}>Capture photo</button>
             </div>
         </div>
     ) : (
